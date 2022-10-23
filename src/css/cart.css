@@ -1,0 +1,133 @@
+.cart-page {
+  margin: 6rem;
+  margin-top: 10rem;
+  display: flex;
+  justify-content: space-between;
+}
+.cart-page-empty {
+  margin: 15rem;
+  display: flex;
+  justify-content: center;
+}
+.cart-header {
+  border-bottom: 0.5px solid;
+  width: 160%;
+}
+.cart-header h3 {
+  font-weight: 700;
+}
+.cart-page-info {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 0.5px solid;
+  padding: 20px 0;
+  width: 160%;
+}
+
+.cart-img-name-div {
+  display: flex;
+  align-items: center;
+}
+
+.cart-page-img {
+  width: 4rem;
+  height: 4rem;
+  border: 1px solid;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.cart-page-img img {
+  width: 80%;
+  height: 80%;
+  object-fit: cover;
+}
+.cart-name-price {
+  margin-left: 20px;
+}
+.cart-name-price p:first-child {
+  text-transform: capitalize;
+  font-weight: 700;
+}
+.cart-name-price p:last-child {
+  font-weight: 700;
+}
+
+.cart-prod-total-div {
+  display: flex;
+  align-items: flex-start;
+}
+
+.qty-div {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border: 1px solid;
+  margin-right: 2rem;
+  height: 1.5rem;
+  width: 5rem;
+}
+.qty-div p:first-child:hover,
+.qty-div p:last-child:hover {
+  cursor: pointer;
+}
+.cart-qty-tot {
+  font-weight: 700;
+  max-height: 2rem;
+  margin-right: 1.5rem;
+  display: flex;
+  align-items: center;
+}
+.remove-cart button {
+  border: none;
+  background: none;
+}
+.remove-cart button:hover {
+  cursor: pointer;
+}
+.order-summary {
+  width: 20rem;
+  font-weight: 700;
+}
+.order-summary-header {
+  border-bottom: 0.5px solid;
+}
+.order-summary-header h3 {
+  font-weight: 700;
+}
+.sub-total-div {
+  border-bottom: 0.5px solid;
+  padding: 8px 0;
+  font-size: 18px;
+}
+.sub-total {
+  display: flex;
+  justify-content: space-between;
+  text-transform: capitalize;
+}
+.delivery {
+  display: flex;
+  justify-content: space-between;
+  text-transform: capitalize;
+}
+.final-total {
+  display: flex;
+  flex-direction: column;
+}
+.total {
+  display: flex;
+  justify-content: space-between;
+  font-size: 21px;
+}
+.final-total button {
+  height: 3rem;
+  border: none;
+  font-size: 14px;
+  background: var(--black);
+  color: var(--white);
+}
+.final-total button:hover {
+  cursor: pointer;
+  background: #efefef;
+  color: var(--black);
+}

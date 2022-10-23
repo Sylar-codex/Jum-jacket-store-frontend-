@@ -1,0 +1,10 @@
+.footer-div {
+  background: var(--black);
+  color: var(--white);
+  display: flex;
+  padding: 3rem 8rem;
+  justify-content: space-around;
+  text-transform: capitalize;
+  font-size: 18px;
+  font-weight: 700;
+}

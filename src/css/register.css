@@ -1,0 +1,46 @@
+.register-form-div {
+  margin: auto;
+  margin-top: 10rem;
+  margin-bottom: 5rem;
+  width: 40%;
+  border: 1px solid;
+  border-radius: 5px;
+}
+.register-form-div h2 {
+  text-align: center;
+}
+.register-form-group {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.register-form-group label {
+  margin: 0.5rem 1rem;
+}
+.register-form-group input {
+  margin: 0 1rem;
+  height: 2rem;
+  border: 1px solid;
+  border-radius: 5px;
+}
+
+.register-submit {
+  margin: 0.5rem 1rem;
+}
+.register-submit input {
+  text-align: center;
+  padding: 8px;
+  border: none;
+  border-radius: 5px;
+  width: 20%;
+  background: #0e6efd;
+  color: #ffffff;
+  font-weight: 700;
+}
+.register-submit input:hover {
+  cursor: pointer;
+  opacity: 0.8;
+}
+.login-red {
+  margin: 0.5rem 1rem;
+}

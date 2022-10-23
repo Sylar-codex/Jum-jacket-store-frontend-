@@ -1,0 +1,25 @@
+.order-div {
+  margin: 10rem 2rem;
+}
+
+.order-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+.order-table {
+  border-collapse: collapse;
+  width: 100%;
+}
+.order-table td,
+.order-table th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+.order-table th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: var(--black);
+  color: white;
+}

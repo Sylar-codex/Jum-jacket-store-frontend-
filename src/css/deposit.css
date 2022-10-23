@@ -1,0 +1,20 @@
+.container-deposit {
+  max-width: 375px;
+  padding: 0 30px;
+  margin: 12rem auto;
+  overflow: auto;
+}
+
+.container-deposit button {
+  border: none;
+  outline: none;
+  background: #0e6efd;
+  color: var(--white);
+  padding: 2rem;
+  font-size: 16px;
+  font-weight: 700;
+}
+.container-deposit button:hover {
+  opacity: 0.8;
+  cursor: pointer;
+}
