@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faXmark, faAngleLeft } from "@fortawesome/free-solid-svg-icons";
 import { increment, decrement } from "../utils/utils";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 import "../css/product.css";
 
 function Product() {
@@ -51,7 +52,7 @@ function Product() {
         {products.products.map((product) => (
           <div className="prod-disp" key={product.id}>
             <div className="prod-div-img">
-              <img src={product.image} alt="product" />
+              <LazyLoadImage src={product.image} alt="product" />
             </div>
             <div className="quick">
               <p
@@ -93,7 +94,7 @@ function Product() {
             </div>
             <div className="prod-info-mod-1">
               <div className="prod-info-img">
-                <img src={info.image} />
+                <LazyLoadImage src={info.image} />
               </div>
               <div className="prod-info-name-desc">
                 <h3>{info.product_name}</h3>
@@ -139,7 +140,7 @@ function Product() {
               {carts.carts.map((cart) => (
                 <div className="cart-mod-info-2" key={cart.id}>
                   <div className="cart-mod-img">
-                    <img src={cart.image} alt="cart" />
+                    <LazyLoadImage src={cart.image} alt="cart" />
                   </div>
                   <div>
                     <div className="cart-mod-name">{cart.product_name}</div>

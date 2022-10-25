@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import "../../css/cart.css";
 import { increment, decrement } from "../../utils/utils";
 import { Link, useNavigate } from "react-router-dom";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
 function Cart({ carts, getCarts, deleteCart, updateCart, getTotal, total }) {
   const navigate = useNavigate();
@@ -38,7 +39,7 @@ function Cart({ carts, getCarts, deleteCart, updateCart, getTotal, total }) {
               <div className="cart-page-info" key={cart.id}>
                 <div className="cart-img-name-div">
                   <div className="cart-page-img">
-                    <img src={cart.image} alt="carts" />
+                    <LazyLoadImage src={cart.image} alt="carts" />
                   </div>
                   <div className="cart-name-price">
                     <p>{cart.product_name}</p>
