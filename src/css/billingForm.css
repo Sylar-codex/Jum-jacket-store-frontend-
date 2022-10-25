@@ -43,3 +43,20 @@
   margin-right: 2rem;
   margin-top: 3.5rem;
 }
+
+@media only screen and (max-width: 430px) {
+  .bill-form {
+    margin: 5rem 0rem;
+    display: flex;
+    flex-direction: column;
+  }
+  .form-div {
+    width: 20rem;
+    margin-left: 2rem;
+  }
+  .order-summary-bill {
+    width: 20rem;
+    margin-left: 2rem;
+    margin-top: 1rem;
+  }
+}

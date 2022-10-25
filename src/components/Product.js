@@ -4,6 +4,7 @@ import useCartState from "../hooks/cartHooks";
 import { useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faXmark, faAngleLeft } from "@fortawesome/free-solid-svg-icons";
+import { increment, decrement } from "../utils/utils";
 import "../css/product.css";
 
 function Product() {
@@ -18,32 +19,6 @@ function Product() {
     getProducts();
     getCarts();
   }, []);
-
-  const increment = (id) => {
-    let counter = 1;
-    carts.carts.forEach((cart) => {
-      if (cart.id === id) {
-        counter = cart.count + 1;
-      }
-    });
-    console.log(counter);
-    const use = { count: counter };
-
-    updateCart(id, use);
-  };
-
-  const decrement = (id) => {
-    let counter = 1;
-    carts.carts.forEach((cart) => {
-      if (cart.id === id && cart.count > 1) {
-        cart.count = cart.count - 1;
-        counter = cart.count;
-      }
-    });
-    console.log(counter);
-    const use = { count: counter };
-    updateCart(id, use);
-  };
 
   useEffect(() => {
     carts;
@@ -174,7 +149,7 @@ function Product() {
                     <div className="cart-mod-qty">
                       <p
                         onClick={() => {
-                          decrement(cart.id);
+                          decrement(updateCart, cart.id, carts);
                         }}
                       >
                         -
@@ -182,7 +157,7 @@ function Product() {
                       <p>{cart.count}</p>
                       <p
                         onClick={() => {
-                          increment(cart.id);
+                          increment(updateCart, cart.id, carts);
                         }}
                       >
                         +
@@ -199,7 +174,7 @@ function Product() {
                   </div>
                 </div>
               ))}
-              <div style={{ padding: "130px" }}></div>
+              <div className="take-space"></div>
             </div>
             <div className="cart-mod-sub-div">
               <div className="cart-mod-sub">

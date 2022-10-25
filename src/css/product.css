@@ -274,6 +274,9 @@
 .cart-mod-qty p:last-child:hover {
   cursor: pointer;
 }
+.take-space {
+  padding: 130px;
+}
 .cart-mod-sub-div {
   position: fixed;
   left: 70%;
@@ -316,4 +319,74 @@
 .viewcart-mod button:hover {
   cursor: pointer;
   opacity: 0.8;
+}
+
+@media only screen and (max-width: 430px) {
+  .product {
+    margin: 6rem 0.5rem 6rem 1.1rem;
+  }
+  .prod-disp {
+    margin: 3rem 0.5rem 0rem;
+  }
+  .quick p {
+    display: none;
+  }
+  .prod-disp:hover > .quick {
+    display: none;
+  }
+  .prod-disp:hover > .prod-div-img img {
+    transform: none;
+  }
+  .prod-disp button {
+    visibility: visible;
+  }
+  .prod-disp:hover > button {
+    visibility: none;
+  }
+  /* cart modal */
+  .empty-mod {
+    width: 30%;
+  }
+  .cart-modal {
+    background: var(--white);
+    width: 70%;
+  }
+  .cart-modal-header {
+    width: 69%;
+  }
+  .cart-mod-info {
+    margin: 50px 30px;
+    width: 80%;
+  }
+  .cart-mod-name {
+    font-size: 16px;
+  }
+  .cart-mod-price {
+    font-size: 16px;
+  }
+  .cart-mod-qty {
+    width: 5rem;
+  }
+
+  .remove-cart-mod {
+    opacity: 1;
+  }
+
+  .cart-mod-info-2:hover > .remove-cart-mod {
+    opacity: none;
+  }
+  .cart-mod-sub-div {
+    left: 30%;
+    top: 60%;
+    /* wants me to make it 70% but oh well till I try on a real phone screen */
+  }
+
+  .cart-mod-sub {
+    font-size: 25px;
+  }
+  .viewcart-mod button {
+    margin-left: 35px;
+    width: 55%;
+    font-size: 15px;
+  }
 }

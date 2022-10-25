@@ -1,5 +1,7 @@
-.footer-div {
+footer {
   background: var(--black);
+}
+.footer-div {
   color: var(--white);
   display: flex;
   padding: 3rem 8rem;
@@ -7,4 +9,10 @@
   text-transform: capitalize;
   font-size: 18px;
   font-weight: 700;
+}
+@media only screen and (max-width: 430px) {
+  .footer-div {
+    flex-direction: column;
+    padding: 3rem 3rem;
+  }
 }

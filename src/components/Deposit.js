@@ -30,7 +30,7 @@ function Deposit() {
     console.log("i have been clicked");
     await axios
       .get(
-        `http://localhost:8000/api/deposit/verify/${wallet.deposit.reference}`,
+        `http://localhost:8000/api/deposit/verify/${wallet.deposit.reference}/`,
         tokenConfig(auth)
       )
       .then((res) => {

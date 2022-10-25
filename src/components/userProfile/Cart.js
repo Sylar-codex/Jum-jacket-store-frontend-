@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import "../../css/cart.css";
+import { increment, decrement } from "../../utils/utils";
 import { Link, useNavigate } from "react-router-dom";
 
 function Cart({ carts, getCarts, deleteCart, updateCart, getTotal, total }) {
@@ -15,30 +16,6 @@ function Cart({ carts, getCarts, deleteCart, updateCart, getTotal, total }) {
     carts;
     getTotal(carts.carts);
   }, [carts]);
-
-  const increment = (id) => {
-    let counter = 1;
-    carts.carts.forEach((cart) => {
-      if (cart.id === id) {
-        counter = cart.count + 1;
-      }
-    });
-    const use = { count: counter };
-
-    updateCart(id, use);
-  };
-
-  const decrement = (id) => {
-    let counter = 1;
-    carts.carts.forEach((cart) => {
-      if (cart.id === id && cart.count > 1) {
-        cart.count = cart.count - 1;
-        counter = cart.count;
-      }
-    });
-    const use = { count: counter };
-    updateCart(id, use);
-  };
 
   return (
     <div>
@@ -72,7 +49,7 @@ function Cart({ carts, getCarts, deleteCart, updateCart, getTotal, total }) {
                   <div className="qty-div">
                     <p
                       onClick={() => {
-                        decrement(cart.id);
+                        decrement(updateCart, cart.id, carts);
                       }}
                     >
                       -
@@ -80,7 +57,7 @@ function Cart({ carts, getCarts, deleteCart, updateCart, getTotal, total }) {
                     <p>{cart.count}</p>
                     <p
                       onClick={() => {
-                        increment(cart.id);
+                        increment(updateCart, cart.id, carts);
                       }}
                     >
                       +

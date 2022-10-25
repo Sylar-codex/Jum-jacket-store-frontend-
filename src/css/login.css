@@ -44,3 +44,10 @@
 .reg-red {
   margin: 0.5rem 1rem;
 }
+
+@media only screen and (max-width: 430px) {
+  .login-form-div {
+    margin: 8rem 0rem 5rem;
+    width: 100%;
+  }
+}
