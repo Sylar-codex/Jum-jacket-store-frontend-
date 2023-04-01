@@ -26,7 +26,10 @@ function useCartState() {
 
   const getCarts = async () => {
     await axios
-      .get("http://localhost:8000/api/carts/", tokenConfig(auth))
+      .get(
+        "https://jum-jacket-store-backend-production.up.railway.app/api/carts/",
+        tokenConfig(auth)
+      )
       .then((res) => {
         const cart = res.data.filter((data) => !data.paid);
         const ordered = res.data.filter((data) => data.paid);
@@ -37,7 +40,11 @@ function useCartState() {
   };
   const addCart = async (cart) => {
     await axios
-      .post("http://localhost:8000/api/carts/", cart, tokenConfig(auth))
+      .post(
+        "https://jum-jacket-store-backend-production.up.railway.app/api/carts/",
+        cart,
+        tokenConfig(auth)
+      )
       .then((res) => {
         dispatchCarts({ type: ADD_CART, payload: res.data });
         dispatchMessage(createMessage({ addToCart: "Added to cart" }));
@@ -46,7 +53,10 @@ function useCartState() {
   };
   const deleteCart = async (id) => {
     await axios
-      .delete(`http://localhost:8000/api/carts/${id}/`, tokenConfig(auth))
+      .delete(
+        `https://jum-jacket-store-backend-production.up.railway.app/api/carts/${id}/`,
+        tokenConfig(auth)
+      )
       .then((res) => {
         dispatchCarts({ type: DELETE_CART, payload: id });
         dispatchMessage(
@@ -59,7 +69,11 @@ function useCartState() {
   };
   const updateCart = async (id, cart) => {
     await axios
-      .patch(`http://localhost:8000/api/carts/${id}/`, cart, tokenConfig(auth))
+      .patch(
+        `https://jum-jacket-store-backend-production.up.railway.app/api/carts/${id}/`,
+        cart,
+        tokenConfig(auth)
+      )
       .then((res) => {
         dispatchCarts({ type: UPDATE_CART, payload: res.data });
       })
@@ -76,7 +90,10 @@ function useCartState() {
 
   const sendBillForm = async (form) => {
     await axios
-      .post("http://localhost:8000/api/billingform/", form)
+      .post(
+        "https://jum-jacket-store-backend-production.up.railway.app/api/billingform/",
+        form
+      )
       .then((res) => {});
   };
 

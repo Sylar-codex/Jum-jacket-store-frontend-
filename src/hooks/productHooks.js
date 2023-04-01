@@ -7,9 +7,13 @@ const useProductState = () => {
   const { products, dispatchProducts } = useContext(ProductContext);
 
   const getProducts = async () => {
-    await axios.get("http://localhost:8000/api/products/").then((res) => {
-      dispatchProducts({ type: GET_PRODUCTS, payload: res.data });
-    });
+    await axios
+      .get(
+        "https://jum-jacket-store-backend-production.up.railway.app/api/products/"
+      )
+      .then((res) => {
+        dispatchProducts({ type: GET_PRODUCTS, payload: res.data });
+      });
   };
   return {
     products,

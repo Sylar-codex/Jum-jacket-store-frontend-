@@ -23,7 +23,10 @@ const useAuthState = () => {
     //user loading
     dispatchAuth({ type: USER_LOADING });
     await axios
-      .get("http://localhost:8000/api/auth/user", tokenConfig(auth))
+      .get(
+        "https://jum-jacket-store-backend-production.up.railway.app/api/auth/user",
+        tokenConfig(auth)
+      )
       .then((res) => {
         dispatchAuth({ type: USER_LOADED, payload: res.data });
       })
@@ -40,7 +43,11 @@ const useAuthState = () => {
     };
     const body = JSON.stringify({ username, password });
     await axios
-      .post("http://localhost:8000/api/auth/login", body, config)
+      .post(
+        "https://jum-jacket-store-backend-production.up.railway.app/api/auth/login",
+        body,
+        config
+      )
       .then((res) => {
         dispatchAuth({ type: LOGIN_SUCCESS, payload: res.data });
       })
@@ -70,7 +77,11 @@ const useAuthState = () => {
       email,
     });
     await axios
-      .post("http://localhost:8000/api/auth/register", body, config)
+      .post(
+        "https://jum-jacket-store-backend-production.up.railway.app/api/auth/register",
+        body,
+        config
+      )
       .then((res) => {
         dispatchAuth({ type: REGISTER_SUCCESS, payload: res.data });
       })
@@ -81,7 +92,11 @@ const useAuthState = () => {
   };
   const logout = async () => {
     await axios
-      .post("http://localhost:8000/api/auth/logout", null, tokenConfig(auth))
+      .post(
+        "https://jum-jacket-store-backend-production.up.railway.app/api/auth/logout",
+        null,
+        tokenConfig(auth)
+      )
       .then(() => {
         dispatchAuth({ type: LOGOUT_SUCCESS });
       })

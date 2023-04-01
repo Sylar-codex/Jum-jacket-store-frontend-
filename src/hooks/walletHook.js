@@ -11,7 +11,11 @@ const useWalletState = () => {
 
   const make_deposit = async (depo) => {
     await axios
-      .post("http://localhost:8000/api/deposit", depo, tokenConfig(auth))
+      .post(
+        "https://jum-jacket-store-backend-production.up.railway.app/api/deposit",
+        depo,
+        tokenConfig(auth)
+      )
       .then((res) => {
         dispatchWallet({ type: MAKE_DEPOSIT, payload: res.data.data });
       });
