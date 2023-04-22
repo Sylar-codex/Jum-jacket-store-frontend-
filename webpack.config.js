@@ -1,8 +1,9 @@
 const path = require("path");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
-  watch: true,
   devServer: {
+    contentBase: "./build",
     static: {
       directory: path.resolve(__dirname, "dist"),
     },
@@ -12,10 +13,13 @@ module.exports = {
     compress: true,
     historyApiFallback: true,
   },
+  stats: {
+    children: true,
+  },
   mode: "development",
   entry: path.resolve(__dirname, "src/index.js"),
   output: {
-    path: path.resolve(__dirname, "dist"),
+    path: path.resolve(__dirname, "build"),
     filename: "main.js",
   },
   module: {
@@ -41,6 +45,11 @@ module.exports = {
       },
     ],
   },
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: path.resolve("./build/index.html"),
+    }),
+  ],
   performance: {
     hints: false,
   },
