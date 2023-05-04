@@ -2,6 +2,7 @@
 
 An SPA Built with React,using React hooks and my custom hooks,context API and useReducers to manage states. Integrated with django restframework api.
 image optimization using image lazy loader.
+also this a react app built from the scratch, using my custom webpack config
 
 ## Tools and language
 
